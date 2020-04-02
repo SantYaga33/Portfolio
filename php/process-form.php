@@ -1,17 +1,17 @@
 <?php
-if (isset($_REQUEST['name'],$_REQUEST['email'])) {
+if (isset($_REQUEST['name'],$_REQUEST['email'],$_REQUEST['comment'])) {
       
     $name = $_REQUEST['name'];
     $email = $_REQUEST['email'];
-    $message = $_REQUEST['message'];
-      
+    $comment = $_REQUEST['comment'];
+
     // Set your email address where you want to receive emails. 
     $to = '33santyaga@gmail.com';
       
     $subject = 'Contact Request From Website';
     $headers = "From: ".$name." <".$email."> \r\n";
       
-    $send_email = mail($to,$subject,$message,$headers);
+    $send_email = mail($to,$subject,$comment,$headers);
       
     echo ($send_email) ? 'success' : 'error';
       
